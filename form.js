@@ -1,4 +1,4 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbxyY6L81yjl79F89AT4BfINlgudSkjn_lJ10f-eia7n0VZtlnZTo3MxHkhkOofE-Chr6A/exec"; // from Apps Script
+const scriptURL = "https://script.google.com/macros/s/AKfycbya6jYf1eacYdz5EZQDhP1yQ89nWi1st8da_CD1I-x-8oTzuboGFSWx3uW_rMSYdl5ITw/exec"; // from Apps Script
 
 document.getElementById("signupForm").addEventListener("submit", async (e) => {
     e.preventDefault();
