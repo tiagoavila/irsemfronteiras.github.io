@@ -1,32 +1,28 @@
-const scriptURL = "https://script.google.com/macros/s/AKfycbya6jYf1eacYdz5EZQDhP1yQ89nWi1st8da_CD1I-x-8oTzuboGFSWx3uW_rMSYdl5ITw/exec"; // from Apps Script
+const SHEETDB_URL = "https://sheetdb.io/api/v1/71iry3q44vwtd"; // replace with your SheetDB API URL
 
 document.getElementById("signupForm").addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
+    const now = new Date().toISOString();
+    data.DataCadastro = now;
 
-    // If honeypot is filled, skip
-    if (data.hp_field) {
-        console.warn("Bot detected, ignoring submission.");
-        return;
-    }
+    try {
+        const response = await fetch(SHEETDB_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ data: [data] }) // SheetDB expects { "data": [ ... ] }
+        });
 
-    const response = await fetch(scriptURL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    });
-
-    const result = await response.json();
-
-        if (result.status === "success") {
+        if (response.ok) {
             alert("✅ Obrigado! Suas informações foram salvas.");
             e.target.reset();
-        } else if (result.status === "error" && result.reason === "invalid_email") {
-            alert("❌ Por favor, insira um endereço de e-mail válido.");
-        } else if (result.status === "ignored") {
-            console.warn("Envio de bot ignorado.");
         } else {
-            alert("⚠️ Algo deu errado. Por favor, tente novamente mais tarde.");
+            alert("⚠️ Falha ao salvar os dados. Tente novamente mais tarde.");
         }
+    } catch (err) {
+        console.error("Erro ao enviar o formulário:", err);
+        alert("⚠️ Erro de conexão.");
+    }
 });
