@@ -5,18 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IR Sem Fronteiras</title>
+  <link rel="icon" type="image/png" href="images/Ir_sem_fronteiras_favicon.png">
   <link rel="stylesheet" href="style.css">
   <script src="form.js" defer></script>
+
+  <title>IR Sem Fronteiras: Declaração de Imposto de Renda de Investimentos no Exterior</title>
+
+  <meta name="description"
+    content="Simplifique a declaração de Imposto de Renda de investimentos no exterior. Nossa plataforma automatiza cálculos de câmbio e gera relatórios prontos para a Receita Federal.">
+  <meta name="keywords"
+    content="imposto de renda exterior, declaração de investimentos, IRRF, Receita Federal, ativos internacionais, câmbio, investidor brasileiro no exterior, relatório IR, imposto sobre ganhos de capital">
+  <meta name="author" content="IR Sem Fronteiras">
+  <meta http-equiv="Content-Language" content="pt-br">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="IR Sem Fronteiras">
+  <meta property="og:description" content="Simplifique a declaração de Imposto de Renda de investimentos no exterior.">
+  <meta property="og:image" content="https://seusite.com/caminho-para-sua-imagem-hero.jpg">
+  <meta property="og:url" content="https://seusite.com">
+  <meta property="og:type" content="website">
 </head>
 
 <body>
 
   <header>
-    <h1>IR Sem Fronteiras</h1>
+    <h1>
+      IR Sem Fronteiras
+    </h1>
     <p>Simplificando a declaração de investimentos no exterior</p>
   </header>
 
   <div class="hero">
+    <img src="images/Ir_sem_fronteiras_demonstracao.png" alt="Tela de computador com relatórios financeiros e notas de dólar." class="hero-img" />
     <h2>Declare seus investimentos no exterior sem complicações</h2>
     <p>Uma solução simples e segura para brasileiros organizarem seus ativos internacionais e fazerem sua declaração de
       Imposto de Renda corretamente.</p>
@@ -40,21 +60,41 @@
   <section>
     <h3>Benefícios</h3>
     <div class="benefits">
-      <div>✔️ Automatização de cálculos de câmbio e ganhos</div>
-      <div>✔️ Dashboard claro de ativos no exterior</div>
-      <div>✔️ Relatórios prontos para uso no IR</div>
-      <div>✔️ Menor risco de erro e multas</div>
-      <div>✔️ Preço acessível e interface simples</div>
+      <div><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4b8.svg" alt="Câmbio"
+          class="benefit-icon" />Automatização de cálculos de câmbio e ganhos</div>
+      <div><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4c8.svg" alt="Dashboard"
+          class="benefit-icon" />Dashboard claro de ativos no exterior</div>
+      <div><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4dd.svg" alt="Relatórios"
+          class="benefit-icon" />Relatórios prontos para uso no IR</div>
+      <div><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/26a0.svg" alt="Menor risco"
+          class="benefit-icon" />Menor risco de erro e multas</div>
+      <div><img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/1f4b0.svg" alt="Preço"
+          class="benefit-icon" />Preço acessível e interface simples</div>
     </div>
   </section>
 
   <section>
     <h3>Como vai funcionar</h3>
-    <div class="steps">
-      <div>1️⃣ Você informa seus ativos no exterior</div>
-      <div>2️⃣ O sistema importa ou você insere extratos</div>
-      <div>3️⃣ Conversão automática e cálculos</div>
-      <div>4️⃣ Relatório pronto para declaração</div>
+    <div class="flow-diagram">
+      <div class="flow-step">
+        <div class="flow-circle">1</div>
+        <div class="flow-text">Você informa seus ativos no exterior</div>
+      </div>
+      <div class="flow-line line-1-2"></div>
+      <div class="flow-step">
+        <div class="flow-circle">2</div>
+        <div class="flow-text">Você insere suas operações de compra e venda</div>
+      </div>
+      <div class="flow-line line-2-3"></div>
+      <div class="flow-step">
+        <div class="flow-circle">3</div>
+        <div class="flow-text">Conversão automática e cálculos</div>
+      </div>
+      <div class="flow-line line-3-4"></div>
+      <div class="flow-step">
+        <div class="flow-circle">4</div>
+        <div class="flow-text">Relatório pronto para declaração</div>
+      </div>
     </div>
   </section>
 
@@ -63,18 +103,22 @@
     <p>E garanta <strong>um desconto especial no lançamento</strong>.</p>
     <form id="signupForm">
       <input type="text" name="Nome" placeholder="Seu nome" required>
-      <input type="email" name="Email" placeholder="Seu e-mail" required>
-      <button type="submit">Entrar na lista de espera</button>
+      <input type="email" name="Email" placeholder="Seu e-mail" required id="email-input">
+      <input type="text" name="website" id="website" style="display:none" autocomplete="off" tabindex="-1">
+      <button type="submit" id="submit-btn">Entrar na lista de espera</button>
     </form>
   </section>
 
   <section>
     <h3>Privacidade e Responsabilidade</h3>
-    <p>Seus dados serão usados apenas para comunicação sobre a plataforma. Não compartilhamos suas informações com terceiros.</p>
-    <p><strong>Atenção:</strong> apesar do sistema automatizar cálculos e relatórios, é indispensável que o usuário
-      revise cuidadosamente as informações. O sistema não garante que erros introduzidos na declaração sejam totalmente
-      eliminados.</p>
+    <p>Seus dados de investimentos — como lista de ativos, operações de compra e venda e demais informações necessárias
+      — são utilizados exclusivamente para o funcionamento do sistema. Eles não são compartilhados, comercializados ou
+      disponibilizados a terceiros em nenhuma circunstância.</p>
+    <p><strong>Atenção:</strong> embora o sistema auxilie na automação de cálculos e relatórios, é fundamental que o
+      usuário revise todas as informações antes de enviar sua declaração. Não é possível garantir a eliminação completa
+      de erros decorrentes do preenchimento.</p>
   </section>
+
 
   <footer>
     <p>&copy; 2025 IR Sem Fronteiras. Todos os direitos reservados.</p>
